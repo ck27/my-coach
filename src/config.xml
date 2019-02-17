@@ -14,6 +14,12 @@
 		<property name="fortuneService" ref="myFortuneService" />
 	</bean>
 	
+	<bean id="indCoach" class="com.missionspring.mycoach.CricketCoach">
+	    <!-- Injecting literal values using setters -->
+		<property name="emailAddress" value="ravi@bcci.com" />
+		<property name="team" value="india"></property>
+	</bean>
+	
 	
 
 </beans>

@@ -24,6 +24,12 @@ public class Application {
 		System.out.println(tCoach.getDailyWorkout());
 		System.out.println(tCoach.getDailyFortune());
 		
+		Coach cricketCoach = context.getBean("indCoach", Coach.class);
+		
+		//call methods using bean
+		System.out.println(cricketCoach.getDailyWorkout());
+		System.out.println(cricketCoach.getDailyFortune());
+		
 		//close app context
 		context.close();
 	}
