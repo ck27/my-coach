@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" 
+    xmlns:context="http://www.springframework.org/schema/context" 
+    xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd">
+		
+	<!-- loading the properties file using context  
+	to use context tag add the following 
+	
+	xmlns:context="http://www.springframework.org/schema/context" 
+	
+	xsi:schemaLocation="... http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd ..."
+	
+	-->
+	<context:property-placeholder location="classpath:application.properties"/>
 
 	<bean id="myFortuneService" class="com.missionspring.mycoach.HappyFortuneService"/>
 
@@ -16,8 +33,8 @@
 	
 	<bean id="indCoach" class="com.missionspring.mycoach.CricketCoach">
 	    <!-- Injecting literal values using setters -->
-		<property name="emailAddress" value="ravi@bcci.com" />
-		<property name="team" value="india"></property>
+		<property name="emailAddress" value="${app.emailAddress}" />
+		<property name="team" value="${app.team}" />
 	</bean>
 	
 	
