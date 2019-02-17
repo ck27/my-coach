@@ -3,6 +3,17 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
 
-	<bean id="myCoach" class="com.missionjava.mycoach.TrackCoach"></bean>
+	<bean id="myFortuneService" class="com.missionspring.mycoach.HappyFortuneService"/>
+
+	<bean id="bCoach" class="com.missionspring.mycoach.BaseballCoach">
+		<constructor-arg ref="myFortuneService" />
+	</bean>
+	
+	<bean id="tCoach" class="com.missionspring.mycoach.TrackCoach">
+		<!-- constructor injection -->
+		<constructor-arg ref="myFortuneService" />
+	</bean>
+	
+	
 
 </beans>
