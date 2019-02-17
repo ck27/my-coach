@@ -3,6 +3,6 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
 
-	<bean id="myCoach" class="com.missionjava.mycoach.BaseballCoach"></bean>
+	<bean id="myCoach" class="com.missionjava.mycoach.TrackCoach"></bean>
 
 </beans>
