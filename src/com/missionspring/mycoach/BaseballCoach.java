@@ -5,8 +5,8 @@ public class BaseballCoach implements Coach{
 	private FortuneService myFortuneService;
 	
 	public BaseballCoach(FortuneService myFortuneService) {
-		// TODO Auto-generated constructor stub
 		this.myFortuneService = myFortuneService;
+		System.out.println("Constructor Injection");
 	}
 	
 	@Override

@@ -9,6 +9,8 @@ public class Application {
 		//load spring configuration file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
 		
+		System.out.println("Context Initialized");
+		
 		//retrieve bean from spring container
 		Coach bCoach = context.getBean("bCoach", Coach.class);
 		
