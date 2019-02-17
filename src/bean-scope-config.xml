@@ -13,7 +13,7 @@
 	
 	<bean id="myFortuneService" class="com.missionspring.mycoach.HappyFortuneService"/>
 
-	<bean id="bCoach" class="com.missionspring.mycoach.BaseballCoach" scope="singleton">
+	<bean id="bCoach" class="com.missionspring.mycoach.BaseballCoach" scope="singleton" init-method="onInit" destroy-method="onDestroy">
 		<!-- constructor injection -->
 		<constructor-arg ref="myFortuneService" />
 	</bean>

@@ -18,5 +18,13 @@ public class BaseballCoach implements Coach{
 	public String getDailyFortune() {
 		return this.myFortuneService.getFortune();
 	}
+	
+	public void onInit() {
+		System.out.println(this.getClass() + " -> OnInit");
+	}
+	
+	public void onDestroy() {
+		System.out.println(this.getClass() + " -> OnDestroy");
+	}
 
 }
