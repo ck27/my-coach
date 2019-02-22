@@ -8,10 +8,14 @@ public class TennisCoach implements Coach {
 	
 	private FortuneService fortuneService;
 	
+	public TennisCoach() {
+		System.out.println("TennisCoach - Default Constructor");
+	}
+	
 	@Autowired
 	public TennisCoach(FortuneService aFortuneService) {
 		this.fortuneService = aFortuneService;
-		System.out.println("Injected");
+		System.out.println("TennisCoach - Constructor Injection");
 	}
 
 	@Override

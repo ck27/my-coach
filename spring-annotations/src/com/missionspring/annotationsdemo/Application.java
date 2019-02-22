@@ -10,7 +10,11 @@ public class Application {
 		
 		Coach aTennisCoach = context.getBean("tennisCoach", Coach.class);
 		System.out.println(aTennisCoach.getDailyWorkout());
-		System.out.println(aTennisCoach.getDailyFortune());		
+		System.out.println(aTennisCoach.getDailyFortune());
+		
+		Coach aCricketCoach = context.getBean("cricketCoach", Coach.class);
+		System.out.println(aCricketCoach.getDailyWorkout());
+		System.out.println(aCricketCoach.getDailyFortune());
 		
 		context.close();
 	}
