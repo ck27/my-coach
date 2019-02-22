@@ -10,12 +10,7 @@ public class Application {
 		
 		Coach aTennisCoach = context.getBean("tennisCoach", Coach.class);
 		System.out.println(aTennisCoach.getDailyWorkout());
-		
-		Coach bTennisCoach = context.getBean("tennisCoach", Coach.class);
-		System.out.println(bTennisCoach.getDailyWorkout());
-		
-		System.out.println(aTennisCoach.equals(bTennisCoach));
-		
+		System.out.println(aTennisCoach.getDailyFortune());		
 		
 		context.close();
 	}
