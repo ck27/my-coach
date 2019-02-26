@@ -20,6 +20,10 @@ public class Application {
 		System.out.println(trackCoach.getDailyWorkout());
 		System.out.println(trackCoach.getDailyFortune());
 		
+		Coach fCoach = context.getBean("footballCoach", Coach.class);
+		System.out.println(fCoach.getDailyWorkout());
+		System.out.println(fCoach.getDailyFortune());
+		
 		context.close();
 	}
 
