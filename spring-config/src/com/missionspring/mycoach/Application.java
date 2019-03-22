@@ -11,6 +11,8 @@ public class Application {
 		
 		System.out.println(swimCoach.getDailyWorkout());
 		System.out.println(swimCoach.getDailyFortune());
+		
+		appContext.close();
 	}
 
 }
