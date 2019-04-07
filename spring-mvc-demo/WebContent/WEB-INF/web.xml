@@ -11,9 +11,10 @@
 	<!-- Step 1 : Configure Spring MVC Dispatcher Servlet -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>org.spiringframework.web.servlet.DispatcherServlet</servlet-class>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		
 		<init-param>
-			<param-name>contextConfiguration</param-name>
+			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
