@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.HttpServletBean;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,6 +40,15 @@ public class HomeController {
 		String username = request.getParameter("username");
 		
 		String message = "Yo! " + username.toUpperCase();
+		model.addAttribute("message", message);
+		
+		return "get-welcome";
+	}
+	
+	@RequestMapping("/handleRequestParam")
+	public String handleRequestParam(@RequestParam("username") String user, Model model) {
+		String message = "Accessing using RequestParam : " + user.toUpperCase();
+		
 		model.addAttribute("message", message);
 		
 		return "get-welcome";
