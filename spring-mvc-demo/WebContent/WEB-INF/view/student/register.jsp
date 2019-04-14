@@ -7,18 +7,33 @@
 <body>
 	<h1>Register</h1>
 	<hr>
-	<form:form action="register" modelAttribute="student"
-		method="POST">
+	<form:form action="register" modelAttribute="student" method="POST">
 		<div>
 			First Name :
 			<form:input path="firstName" />
 		</div>
-		<br/>
+		<br />
 		<div>
 			Last Name :
 			<form:input path="lastName" />
 		</div>
-		<br/>
+		<br />
+		<div>
+			<form:select path="country">
+				<form:options items="${student.countryOptions}" />
+			</form:select>
+		</div>
+		<br />
+		<div>
+			<form:radiobuttons path="favouriteLanguage"
+				items="${student.langOptions}" />
+		</div>
+		<br />
+		<div>
+			Mac OS<form:checkbox path="os" value="Mac OS" />
+			Windows<form:checkbox path="os" value="Windows" />
+			Linux<form:checkbox path="os" value="Linux" />
+		</div>
 		<div>
 			<button type="submit">REGISTER</button>
 		</div>
