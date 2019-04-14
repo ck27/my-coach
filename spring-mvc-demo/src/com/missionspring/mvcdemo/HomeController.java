@@ -1,15 +1,12 @@
-package com.missionspring.mvcdemo.controllers;
+package com.missionspring.mvcdemo;
 
-import org.springframework.http.HttpRequest;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.HttpServletBean;
-
-import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class HomeController {
@@ -23,7 +20,7 @@ public class HomeController {
 	public String displayLoginForm() {
 		return "login-form";
 	}
-	
+
 	@RequestMapping("/login-using-get")
 	public String displayLoginGetForm() {
 		return "login-using-get";
@@ -36,21 +33,22 @@ public class HomeController {
 
 	@RequestMapping("/shoutout")
 	public String shoutout(HttpServletRequest request, Model model) {
-		
+
 		String username = request.getParameter("username");
-		
+
 		String message = "Yo! " + username.toUpperCase();
 		model.addAttribute("message", message);
-		
+
 		return "get-welcome";
 	}
-	
+
 	@RequestMapping("/handleRequestParam")
 	public String handleRequestParam(@RequestParam("username") String user, Model model) {
 		String message = "Accessing using RequestParam : " + user.toUpperCase();
-		
+
 		model.addAttribute("message", message);
-		
+
 		return "get-welcome";
 	}
+
 }
