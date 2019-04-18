@@ -21,6 +21,8 @@ public class CustomerController {
 		StringTrimmerEditor stringEditor = new StringTrimmerEditor(true);
 		dataBinder.registerCustomEditor(String.class, stringEditor);
 		
+		
+		
 	}
 
 	@RequestMapping("/register")
