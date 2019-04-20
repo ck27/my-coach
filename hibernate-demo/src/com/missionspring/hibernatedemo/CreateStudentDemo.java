@@ -30,6 +30,7 @@ public class CreateStudentDemo {
 			
 			// commit transaction 
 			session.getTransaction().commit();
+			session.close();
 			
 		} catch (Exception e) {
 			factory.close();

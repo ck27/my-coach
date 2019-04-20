@@ -1,12 +1,14 @@
 package com.missionspring.hibernatedemo;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.missionspring.hibernatedemo.entity.Student;
 
-public class PrimaryKeyDemo {
+public class QueryStudentDemo {
 
 	public static void main(String[] args) {
 		
@@ -19,23 +21,24 @@ public class PrimaryKeyDemo {
 		
 		
 		try {
-			// create 3 java objects
-			Student student1 = new Student("Rob", "Stark", "rob.stark@gmail.com");
-			Student student2 = new Student("Bran", "Stark", "bran.stark@gmail.com");
-			Student student3 = new Student("Arya", "Stark", "arya.stark@gmail.com");
 	
 			// start a transaction
 			session.beginTransaction();
+
+			// Fetch List from createQuery
+			List<Student> students = session.createQuery("from Student as s where s.lastName like 'Stark'").getResultList();
 			
-			// save object
-			session.save(student1);
-			session.save(student2);
-			session.save(student3);
+			session.getTransaction().commit();
+			// session.close();
 			
 			// commit transaction 
-			session.getTransaction().commit();
-			session.close();
+						
+			students.stream().forEach(System.out::println);
+			
+			
+			
 		} catch (Exception e) {
+			e.printStackTrace();
 			factory.close();
 		}
 		

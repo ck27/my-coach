@@ -47,8 +47,8 @@ public class ReadStudentDemo {
 			} else {
 				System.out.println("Student NOT FONUND with id " + aStudent.getId());
 			}
-			
-			
+			session.getTransaction().commit();
+			session.close();
 			
 		} catch (Exception e) {
 			factory.close();
