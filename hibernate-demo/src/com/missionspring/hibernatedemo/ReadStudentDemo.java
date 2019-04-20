@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.missionspring.hibernatedemo.entity.Student;
 
-public class CreateDemo {
+public class ReadStudentDemo {
 
 	public static void main(String[] args) {
 		
@@ -20,7 +20,7 @@ public class CreateDemo {
 		
 		try {
 			// create java object
-			Student aStudent = new Student("John", "Doe", "john.doe@gmail.com");
+			Student aStudent = new Student("Jane", "Doe", "jane.doe@gmail.com");
 	
 			// start a transaction
 			session.beginTransaction();
@@ -30,6 +30,25 @@ public class CreateDemo {
 			
 			// commit transaction 
 			session.getTransaction().commit();
+			
+			// Show generated Id
+			System.out.println("Save Student with Id " + aStudent.getId());
+			
+			
+			// start a new transaction
+			session = factory.getCurrentSession();
+			
+			session.beginTransaction();
+			
+			Student savedStudent = session.get(Student.class, aStudent.getId());
+			
+			if(savedStudent != null) {
+				System.out.println(savedStudent);
+			} else {
+				System.out.println("Student NOT FONUND with id " + aStudent.getId());
+			}
+			
+			
 			
 		} catch (Exception e) {
 			factory.close();
