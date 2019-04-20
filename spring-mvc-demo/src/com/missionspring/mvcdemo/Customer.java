@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.missionspring.mvcdemo.validations.CourseCode;
+
 public class Customer {
 
 	private String firstName;
@@ -23,6 +25,10 @@ public class Customer {
 	
 	@Pattern(regexp="^[0-9a-zA-Z]{5}", message = "Postal code should contain only alhpabets or numbers of length 5")
 	private String postalCode;
+	
+	
+	@CourseCode
+	private String courseCode;
 	
 	public String getFirstName() {
 		return firstName;
@@ -56,5 +62,14 @@ public class Customer {
 
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getCourseCode() {
+		System.out.println("getCourseCode");
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 }

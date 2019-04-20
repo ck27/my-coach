@@ -6,6 +6,7 @@
 <body>
 	CONGRATULATIONS!!!!!!
 	<br /> Dear ${customer.firstName} ${customer.lastName}, You have
-	registered for ${customer.freePasses} free passes.
+	registered for ${customer.freePasses} free passes. Course :
+	${customer.courseCode}
 </body>
 </html>
